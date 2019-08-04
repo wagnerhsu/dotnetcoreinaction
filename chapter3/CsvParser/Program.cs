@@ -8,7 +8,7 @@ namespace CsvParser
     {
         static void Main(string[] args)
         {
-             var csv = @"Year,Title,Production Studio
+            var csv = @"Year,Title,Production Studio
 2008,Iron Man,Marvel Studios
 2008,The Incredible Hulk,Marvel Studios
 2008,Punisher: War Zone,Marvel Studios
@@ -21,7 +21,9 @@ namespace CsvParser
             var sr = new StringReader(csv);
             var csvReader = new CsvReader(sr);
             foreach (var line in csvReader.Lines)
+            {
                 Console.WriteLine(line.First(p => p.Key == "Title").Value);
+            }
         }
     }
 }
